@@ -103,17 +103,30 @@ public class OperacionesTest {
     /**
      * Test of isPar method, of class Operaciones.
      */
-    @Ignore
     @Test
     public void testIsPar() {
-        System.out.println("isPar");
-        int a = 0;
+        System.out.println("isPar true");
+        //(1)
         Operaciones instance = new Operaciones();
-        boolean expResult = false;
+        //(2)
+        int a = 8;
         boolean result = instance.isPar(a);
+        //(3)
+        boolean expResult = true;
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testIsParFalse() {
+        System.out.println("isPar false");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int a = 7;
+        boolean result = instance.isPar(a);
+        //(3)
+        boolean expResult = false;
+        assertEquals(expResult, result);
     }
 
     /**
