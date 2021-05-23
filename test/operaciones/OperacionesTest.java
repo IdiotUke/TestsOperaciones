@@ -11,28 +11,29 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
  * @author manu
  */
 public class OperacionesTest {
-    
+
     public OperacionesTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -43,19 +44,35 @@ public class OperacionesTest {
     @Test
     public void testRango() {
         System.out.println("rango");
-        int a = 0;
-        int b = 0;
+        //(1)
         Operaciones instance = new Operaciones();
-        int[] expResult = null;
+        //(2)
+        int a = 6;
+        int b = 9;
         int[] result = instance.rango(a, b);
+        //(3)
+        int[] expResult = {6, 7, 8, 9};
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testRangoInverso() {
+        System.out.println("rango inverso");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int a = 9;
+        int b = 6;
+        int[] result = instance.rango(a, b);
+        //(3)
+        int[] expResult = {6, 7, 8, 9};
+        assertArrayEquals(expResult, result);
     }
 
     /**
      * Test of sumRango method, of class Operaciones.
      */
+    @Ignore
     @Test
     public void testSumRango() {
         System.out.println("sumRango");
@@ -72,6 +89,7 @@ public class OperacionesTest {
     /**
      * Test of isPar method, of class Operaciones.
      */
+    @Ignore
     @Test
     public void testIsPar() {
         System.out.println("isPar");
@@ -87,6 +105,7 @@ public class OperacionesTest {
     /**
      * Test of extraerPositivos method, of class Operaciones.
      */
+    @Ignore
     @Test
     public void testExtraerPositivos() {
         System.out.println("extraerPositivos");
@@ -98,5 +117,5 @@ public class OperacionesTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
