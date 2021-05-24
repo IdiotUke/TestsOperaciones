@@ -128,6 +128,16 @@ public class OperacionesTest {
         boolean expResult = false;
         assertEquals(expResult, result);
     }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testIsParNegativos() {
+        System.out.println("isPar negativos");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int a = -2;
+        boolean result = instance.isPar(a);
+    }
 
     /**
      * Test of extraerPositivos method, of class Operaciones.
