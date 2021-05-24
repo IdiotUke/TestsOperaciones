@@ -11,28 +11,29 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
  * @author manu
  */
 public class OperacionesTest {
-    
+
     public OperacionesTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -43,14 +44,29 @@ public class OperacionesTest {
     @Test
     public void testRango() {
         System.out.println("rango");
-        int a = 0;
-        int b = 0;
+        //(1)
         Operaciones instance = new Operaciones();
-        int[] expResult = null;
+        //(2)
+        int a = 6;
+        int b = 9;
         int[] result = instance.rango(a, b);
+        //(3)
+        int[] expResult = {6, 7, 8, 9};
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testRangoInverso() {
+        System.out.println("rango inverso");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int a = 9;
+        int b = 6;
+        int[] result = instance.rango(a, b);
+        //(3)
+        int[] expResult = {6, 7, 8, 9};
+        assertArrayEquals(expResult, result);
     }
 
     /**
@@ -59,14 +75,29 @@ public class OperacionesTest {
     @Test
     public void testSumRango() {
         System.out.println("sumRango");
-        int a = 0;
-        int b = 0;
+        //(1)
         Operaciones instance = new Operaciones();
-        int expResult = 0;
+        //(2)
+        int a = 6;
+        int b = 9;
         int result = instance.sumRango(a, b);
+        //(3)
+        int expResult = 30;
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testSumRangoInverso() {
+        System.out.println("sumRango inverso");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int a = 9;
+        int b = 6;
+        int result = instance.sumRango(a, b);
+        //(3)
+        int expResult = 30;
+        assertEquals(expResult, result);
     }
 
     /**
@@ -74,19 +105,44 @@ public class OperacionesTest {
      */
     @Test
     public void testIsPar() {
-        System.out.println("isPar");
-        int a = 0;
+        System.out.println("isPar true");
+        //(1)
         Operaciones instance = new Operaciones();
-        boolean expResult = false;
+        //(2)
+        int a = 8;
         boolean result = instance.isPar(a);
+        //(3)
+        boolean expResult = true;
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testIsParFalse() {
+        System.out.println("isPar false");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int a = 7;
+        boolean result = instance.isPar(a);
+        //(3)
+        boolean expResult = false;
+        assertEquals(expResult, result);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testIsParNegativos() {
+        System.out.println("isPar negativos");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int a = -2;
+        boolean result = instance.isPar(a);
     }
 
     /**
      * Test of extraerPositivos method, of class Operaciones.
      */
+    @Ignore
     @Test
     public void testExtraerPositivos() {
         System.out.println("extraerPositivos");
@@ -98,5 +154,5 @@ public class OperacionesTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
