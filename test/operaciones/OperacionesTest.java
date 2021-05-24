@@ -161,7 +161,7 @@ public class OperacionesTest {
         //(1)
         Operaciones instance = new Operaciones();
         //(2)
-        int[] nums = {1, -4, 6, 8, -10};
+        int[] nums = null;
         int[] result = instance.extraerPositivos(nums);
     }
     
