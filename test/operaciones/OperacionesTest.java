@@ -142,17 +142,40 @@ public class OperacionesTest {
     /**
      * Test of extraerPositivos method, of class Operaciones.
      */
-    @Ignore
     @Test
     public void testExtraerPositivos() {
         System.out.println("extraerPositivos");
-        int[] nums = null;
+        //(1)
         Operaciones instance = new Operaciones();
-        int[] expResult = null;
+        //(2)
+        int[] nums = {1, -4, 6, 8, -10};
         int[] result = instance.extraerPositivos(nums);
+        //(3)
+        int[] expResult = {1, 6, 8};
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testExtraerPositivosNull() {
+        System.out.println("extraerPositivos null");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int[] nums = {1, -4, 6, 8, -10};
+        int[] result = instance.extraerPositivos(nums);
+    }
+    
+    @Test
+    public void testExtraerPositivosVacio() {
+        System.out.println("extraerPositivos vacio");
+        //(1)
+        Operaciones instance = new Operaciones();
+        //(2)
+        int[] nums = {};
+        int[] result = instance.extraerPositivos(nums);
+        //(3)
+        int[] expResult = {};
+        assertArrayEquals(expResult, result);
     }
 
 }
